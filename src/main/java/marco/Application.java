@@ -73,6 +73,11 @@ public class Application {
         List<Product> productsMostExp = productsList.stream().sorted(Comparator.comparingDouble(Product::getPrice).reversed()).toList();
         productsMostExp.forEach(System.out::println);
 
+        System.out.println(" ");
+        System.out.println("Esercizio 4");
+
+        double ordersAverageSales = ordersList.stream().mapToDouble(order -> order.getProducts().stream().mapToDouble(Product::getPrice).sum()).average().getAsDouble();
+        System.out.println(ordersAverageSales);
     }
 
 
